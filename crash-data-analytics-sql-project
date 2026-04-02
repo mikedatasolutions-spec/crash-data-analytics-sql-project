@@ -1,0 +1,19 @@
+crash-data-analytics-sql-project/
+│
+├── data/
+│   └── crashes_sample.csv
+│
+├── scripts/
+│   ├── 01_create_schema.sql
+│   ├── 02_bulk_insert_staging.sql
+│   ├── 03_etl_load_fact_dim.sql
+│   ├── 04_advanced_queries.sql
+│   └── 05_performance_tuning.sql
+│
+├── presentation/
+│   └── Crash_Data_Insights.pptx
+│
+├── images/
+│   └── dashboard_preview.png
+│
+└── README.md
