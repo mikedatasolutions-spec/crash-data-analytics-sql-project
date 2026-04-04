@@ -1,42 +1,103 @@
-# 🚀 Crash Data Analytics & Performance Optimization
+# 🚀 Crash Data Analytics & Performance Optimization (Insurance Domain)
 
 ## 📌 Project Overview
-This project demonstrates an end-to-end data analytics pipeline using SQL Server, including ETL processing, advanced SQL querying, performance tuning, and data visualization.
+This project demonstrates an end-to-end data analytics pipeline using SQL Server, focused on analyzing vehicle crash and insurance claim data. It covers ETL processing, advanced SQL querying, performance tuning, and executive-level data visualization.
+
+---
 
 ## 🎯 Business Problem
-Transportation agencies face challenges analyzing large crash datasets due to slow query performance and lack of actionable insights.
+
+A large **Auto Insurance Company** is experiencing significant challenges in analyzing crash-related claims data due to fragmented data sources and poor query performance.
+
+The organization stores data across multiple systems:
+
+- Claims data (accidents and payouts)
+- Customer information
+- Vehicle details
+- Location and environmental conditions
+
+### ❗ Key Issues:
+
+1. **Data Silos**
+   - Claims, customers, and vehicle data are stored in separate tables
+   - Difficult to combine and analyze relationships between them
+
+2. **Slow Query Performance**
+   - Analysts experience long query execution times when joining large datasets
+   - Reports take minutes instead of seconds
+
+3. **Lack of Risk Insights**
+   - No clear identification of:
+     - High-risk customers
+     - High-claim vehicle types
+     - Accident-prone locations
+
+4. **Limited Decision Support**
+   - Executives lack visual insights for:
+     - Claim trends
+     - Revenue loss
+     - Risk exposure
+
+---
 
 ## 🛠️ Solution
-- Designed a Star Schema data warehouse
-- Implemented ETL pipeline using BULK INSERT
-- Applied advanced SQL (CTE, Window Functions, Ranking)
-- Optimized performance using indexing strategies
-- Delivered insights through PowerPoint dashboards
+
+To address these challenges, this project implements a **high-performance data analytics solution**:
+
+### ✅ Data Engineering
+- Designed a **relational data model** with multiple linked tables
+- Created **staging tables** for raw data ingestion
+- Built ETL pipelines using **BULK INSERT**
+
+### ✅ Advanced SQL
+- Performed **multi-table joins (3+ tables)** across:
+  - Claims
+  - Customers
+  - Vehicles
+  - Locations
+- Implemented:
+  - CTEs (Common Table Expressions)
+  - Window Functions (RANK, LAG)
+  - Aggregations and group analysis
+
+### ✅ Performance Optimization
+- Added **clustered and non-clustered indexes**
+- Reduced full table scans
+- Improved query performance by **80%+**
+
+### ✅ Data Visualization
+- Created **PowerPoint dashboards** for executives
+- Highlighted trends, risks, and key performance metrics
+
+---
 
 ## 🧱 Data Architecture
-CSV → Staging Tables → Fact & Dimension Tables → Analytics Layer
 
-## ⚙️ Technologies Used
-- SQL Server
-- T-SQL
-- ETL (BULK INSERT)
-- Performance Tuning (Indexes, Query Optimization)
-- PowerPoint (Data Visualization)
+CSV Files → Staging Tables → Relational Tables → Analytics Queries → Visualization
 
-## 📊 Key Insights
-- Identified top high-risk locations
-- Analyzed crash trends over time
-- Evaluated impact of weather conditions
+---
 
-## ⚡ Performance Improvements
-- Reduced query execution time by 80%+
-- Eliminated full table scans using indexing
+## 🗃️ Data Model (Multi-Table Design)
 
-## 📁 Project Structure
-See `/scripts` for SQL logic and `/presentation` for insights.
+### Main Tables:
 
-## 📷 Dashboard Preview
-![Dashboard](images/dashboard_preview.png)
+- **Claims**
+- **Customers**
+- **Vehicles**
+- **Locations**
 
-## 👨‍💻 Author
-Mekonnen L Senbeta
+---
+
+## 🔗 Example: Multi-Table Join (Core of Project)
+
+```sql
+SELECT 
+    c.ClaimID,
+    cust.CustomerName,
+    v.VehicleType,
+    l.City,
+    c.ClaimAmount
+FROM Claims c
+JOIN Customers cust ON c.CustomerID = cust.CustomerID
+JOIN Vehicles v ON c.VehicleID = v.VehicleID
+JOIN Locations l ON c.LocationID = l.LocationID;
