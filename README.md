@@ -1,6 +1,6 @@
-## Crash Data Analytics & Performance Optimization (SQL Server)
+# Crash Data Analytics & Performance Optimization (SQL Server)
 
-# Overview
+## Overview
 
 This project demonstrates an end-to-end data analytics pipeline built using Microsoft SQL Server. It focuses on:
 
@@ -11,7 +11,7 @@ This project demonstrates an end-to-end data analytics pipeline built using Micr
 
 The dataset simulates a crash/claims system where customers, vehicles, claims, and locations are interconnected.
    
-  🏗️ Architecture
+  ##Architecture
 
 Data Sources (CSV / Mock Data)
         ↓
@@ -28,7 +28,7 @@ Analytics Queries / Views
 Dashboard (Power BI / Reporting)
 
 
-🗂️ Database Tables
+## Database Tables
 👤 Customers
 
 Stores customer demographic and contact information.
@@ -54,9 +54,9 @@ Primary Keys / Foreign Keys:
 customer_id → Customers
 vehicle_id → Vehicles
 location_id → Locations
-🔗 Database Diagram
 
-🔗 Database Diagram
+
+## Database Diagram
 
 📊 Relationship Summary
 One Customer → Many Vehicles
@@ -66,7 +66,7 @@ One Location → Many Claims
 
 👉 The Claims table acts as the central fact table connecting all dimension tables.
 
-🔄 ETL Process
+## ETL Process
 1. Extract
    Data sourced from CSV files or generated mock datasets
 2. Transform
@@ -82,8 +82,8 @@ One Location → Many Claims
       Foreign Keys
       Data type validation
    
-🧹 Data Cleaning Examples
-Remove orphan records:
+ ## Data Cleaning Examples
+   Remove orphan records:
 
     DELETE c
     FROM Claims c
@@ -92,13 +92,13 @@ Remove orphan records:
     WHERE v.Vehicle_ID IS NULL;
 
 
-Remove leading/trailing spaces:
+   Remove leading/trailing spaces:
 
     UPDATE Customer_MOCK_DATA
     SET customer_id = LTRIM(RTRIM(customer_id));
 
 
-🧾 SQL Schema Example
+  ## SQL Schema Example
 
         CREATE TABLE Customers (
         customer_id NVARCHAR(50) PRIMARY KEY,
@@ -129,7 +129,7 @@ Remove leading/trailing spaces:
      FOREIGN KEY (location_id) REFERENCES Locations(location_id)
      );
      
-🔍 Analytics & Queries
+## Analytics & Queries
 
     Example queries used for analysis:
 
@@ -150,7 +150,8 @@ Vehicles involved in claims
     SELECT vehicle_id, COUNT(*) AS total_claims
     FROM Claims
     GROUP BY vehicle_id;
-📊 Dashboard (Power BI / Reporting)
+    
+## Dashboard (Power BI / Reporting)
 
 The cleaned and structured data can be connected to a visualization tool such as Power BI to build dashboards including:
 
@@ -160,7 +161,7 @@ The cleaned and structured data can be connected to a visualization tool such as
     📍 Claims per location
     📊 KPI metrics and summaries
 
-⚙️ Technologies Used
+## Technologies Used
 
      Microsoft SQL Server
      T-SQL
@@ -168,7 +169,7 @@ The cleaned and structured data can be connected to a visualization tool such as
      Power BI (for visualization)
      Mockaroo / CSV datasets
 
-🚀 Key Features
+## Key Features
 
     Relational database design (normalized schema)
     Primary Key / Foreign Key constraints
@@ -177,7 +178,7 @@ The cleaned and structured data can be connected to a visualization tool such as
     Analytical query development
     Dashboard-ready dataset
 
-📌 Future Improvements
+## Future Improvements
 
      Automate ETL using SSIS or Python
      Add indexing for performance optimization
