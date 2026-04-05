@@ -56,11 +56,10 @@ vehicle_id → Vehicles
 location_id → Locations
 
 ## Relationship Summary
-
-One Customer → Many Vehicles
-One Customer → Many Claims
-One Vehicle → Many Claims
-One Location → Many Claims
+    One Customer → Many Vehicles
+    One Customer → Many Claims
+    One Vehicle → Many Claims
+    One Location → Many Claims
 
 👉 The Claims table acts as the central fact table connecting all dimension tables.
 
