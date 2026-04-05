@@ -1,6 +1,6 @@
 ## Crash Data Analytics & Performance Optimization (SQL Server)
 
-📌 Overview
+# Overview
 
 This project demonstrates an end-to-end data analytics pipeline built using Microsoft SQL Server. It focuses on:
 
