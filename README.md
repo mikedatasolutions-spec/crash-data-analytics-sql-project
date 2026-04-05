@@ -13,19 +13,19 @@ The dataset simulates a crash/claims system where customers, vehicles, claims, a
    
   ##Architecture
 
-Data Sources (CSV / Mock Data)
+    Data Sources (CSV / Mock Data)
         ↓
-Staging Tables (Raw Data)
+    Staging Tables (Raw Data)
         ↓
-Core Tables (Customers, Vehicles, Locations, Claims)
+    Core Tables (Customers, Vehicles, Locations, Claims)
         ↓
-Data Cleaning & Transformation (SQL)
+    Data Cleaning & Transformation (SQL)
         ↓
-Relational Model (PK / FK Constraints)
+    Relational Model (PK / FK Constraints)
         ↓
-Analytics Queries / Views
+    Analytics Queries / Views
         ↓
-Dashboard (Power BI / Reporting)
+    Dashboard (Power BI / Reporting)
 
 
 ## Database Tables
