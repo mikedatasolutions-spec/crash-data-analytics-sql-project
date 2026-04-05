@@ -267,5 +267,5 @@ The cleaned and structured data can be connected to a visualization tool such as
     
 👤 Author
 
-    Senbeta
+    Mekonnen Senbeta
     SQL Developer | Data Analyst | ETL & BI Enthusiast
