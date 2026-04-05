@@ -1,4 +1,4 @@
-🚀 Crash Data Analytics & Performance Optimization (SQL Server)
+## Crash Data Analytics & Performance Optimization (SQL Server)
 
 📌 Overview
 
