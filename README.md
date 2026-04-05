@@ -1,7 +1,75 @@
-# Crash Data Analytics & Performance Optimization (SQL Server)
+# 🚀 Crash Data Analytics & Performance Optimization ((Insurance Domain)
 
-## Overview
+## 🎯 Business Problem
+    A large **Auto Insurance Company** is experiencing significant challenges in analyzing crash-related claims data due to fragmented data sources and poor query performance.
+    
+ ## The organization stores data across multiple systems:
 
+    - Claims data (accidents and payouts)
+    - Customer information
+    - Vehicle details
+    - Location and environmental conditions  
+
+ ### ❗ Key Issues:
+
+    1. **Data Silos**
+      - Claims, customers, and vehicle data are stored in separate tables
+      - Difficult to combine and analyze relationships between them
+
+    2. **Slow Query Performance**
+      - Analysts experience long query execution times when joining large datasets
+      - Reports take minutes instead of seconds
+
+    3. **Lack of Risk Insights**
+      - No clear identification of:
+          * High-risk customers
+          * High-claim vehicle types
+          * Accident-prone locations
+
+    4. **Limited Decision Support**
+       - Executives lack visual insights for:
+       - Claim trends
+       - Revenue loss
+       - Risk exposure
+
+---
+  ## 🛠️ Solution
+
+    To address these challenges, this project implements a **high-performance data analytics solution**:
+
+### ✅ Data Engineering
+    - Designed a **relational data model** with multiple linked tables
+    - Created **staging tables** for raw data ingestion
+    - Built ETL pipelines using **BULK INSERT**
+
+## 🗃️ Data Model (Multi-Table Design)
+
+### Main Tables:
+    - **Claims**
+    - **Customers**
+    - **Vehicles**
+    - **Locations**
+### Implemented:
+    - CTEs (Common Table Expressions)
+    - Window Functions (RANK, LAG)
+    - Aggregations and group analysis
+    - Stored Procdure
+    - Views
+    - Trigger
+    - other SQl objects as required
+
+### ✅ Performance Optimization
+    - Added **clustered and non-clustered indexes**
+    - Reduced full table scans
+    - Improved query performance by **80%+**
+
+### ✅ Data Visualization
+    - Created **PowerPoint dashboards** for executives
+    - Highlighted trends, risks, and key performance metrics
+
+---
+
+## 📌 Project Overview
 This project demonstrates an end-to-end data analytics pipeline built using Microsoft SQL Server. It focuses on:
 
     -Designing a relational database
@@ -11,7 +79,7 @@ This project demonstrates an end-to-end data analytics pipeline built using Micr
 
 The dataset simulates a crash/claims system where customers, vehicles, claims, and locations are interconnected.
    
-  ## Architecture
+  ## Data Architecture
 
     Data Sources (CSV / Mock Data)
         ↓
@@ -80,7 +148,7 @@ location_id → Locations
       Data type validation
    
  ## Data Cleaning Examples
-   Remove orphan records:
+    Remove orphan records:
 
     DELETE c
     FROM Claims c
@@ -125,6 +193,20 @@ location_id → Locations
      FOREIGN KEY (vehicle_id) REFERENCES Vehicles(vehicle_id),
      FOREIGN KEY (location_id) REFERENCES Locations(location_id)
      );
+
+ ## 🔗 Example: Multi-Table Join (Core of Project)
+
+
+           SELECT 
+            c.ClaimID,
+            cust.CustomerName,
+            v.VehicleType,
+            l.City,
+             c.ClaimAmount
+         FROM Claims c
+            JOIN Customers cust ON c.CustomerID = cust.CustomerID
+            JOIN Vehicles v ON c.VehicleID = v.VehicleID
+            JOIN Locations l ON c.LocationID = l.LocationID;
      
 ## Analytics & Queries
 
@@ -136,7 +218,7 @@ Total claims per customer
      FROM Claims
      GROUP BY customer_id;
 
-Claims by location
+ Claims by location
 
     SELECT location_id, COUNT(*) AS total_claims
     FROM Claims
