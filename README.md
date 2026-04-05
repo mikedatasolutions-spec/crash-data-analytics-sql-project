@@ -180,8 +180,8 @@ The cleaned and structured data can be connected to a visualization tool such as
      Automate ETL using SSIS or Python
      Add indexing for performance optimization
      Implement stored procedures and views
-    Build star schema for data warehousing
-    Integrate real-time data pipelinesa
+     Build star schema for data warehousing
+     Integrate real-time data pipelinesa
     
 👤 Author
 
