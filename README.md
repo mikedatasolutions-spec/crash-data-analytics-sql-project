@@ -4,10 +4,10 @@
 
 This project demonstrates an end-to-end data analytics pipeline built using Microsoft SQL Server. It focuses on:
 
-   Designing a relational database
-   Loading and cleaning mock data
-   Enforcing data integrity using Primary Keys (PK) and Foreign Keys (FK)
-   Preparing data for analytics and reporting
+    -Designing a relational database
+    -Loading and cleaning mock data
+    -Enforcing data integrity using Primary Keys (PK) and Foreign Keys (FK)
+    -Preparing data for analytics and reporting
 
 The dataset simulates a crash/claims system where customers, vehicles, claims, and locations are interconnected.
    
