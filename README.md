@@ -1,4 +1,4 @@
-# 🚀 Crash Data Analytics & Performance Optimization ((Insurance Domain)
+# 🚀 Crash Data Analytics & Performance Optimization (Insurance Domain)
 
 ## 🎯 Business Problem
     A large **Auto Insurance Company** is experiencing significant challenges in analyzing crash-related claims data due to fragmented data sources and poor query performance.
@@ -267,5 +267,6 @@ The cleaned and structured data can be connected to a visualization tool such as
     
 👤 Author
 
-    Mekonnen Senbeta
+    Mekonnen Senbeta 
     SQL Developer | Data Analyst | ETL & BI Enthusiast
+           =====MDS======
