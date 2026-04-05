@@ -11,7 +11,7 @@ This project demonstrates an end-to-end data analytics pipeline built using Micr
 
 The dataset simulates a crash/claims system where customers, vehicles, claims, and locations are interconnected.
    
-  ##Architecture
+  ## Architecture
 
     Data Sources (CSV / Mock Data)
         ↓
