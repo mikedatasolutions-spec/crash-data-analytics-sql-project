@@ -1,7 +1,9 @@
 🚀 Crash Data Analytics & Performance Optimization (SQL Server)
+
 📌 Overview
 
-This project demonstrates an end-to-end data analytics pipeline built using SQL Server. It focuses on designing a relational database, loading mock data, enforcing data integrity, and preparing the dataset for analytics and reporting.
+This project demonstrates an end-to-end data analytics pipeline built using SQL Server.
+It focuses on designing a relational database, loading mock data, enforcing data integrity, and preparing the dataset for analytics and reporting.
 
 The goal is to simulate a real-world crash/claims analytics system where data from multiple entities (customers, vehicles, claims, and locations) is integrated and optimized for querying and insights.
 
