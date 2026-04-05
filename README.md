@@ -55,10 +55,8 @@ customer_id → Customers
 vehicle_id → Vehicles
 location_id → Locations
 
+## Relationship Summary
 
-## Database Diagram
-
-📊 Relationship Summary
 One Customer → Many Vehicles
 One Customer → Many Claims
 One Vehicle → Many Claims
