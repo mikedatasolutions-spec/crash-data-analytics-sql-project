@@ -224,12 +224,43 @@ Total claims per customer
     FROM Claims
     GROUP BY location_id;
     
-Vehicles involved in claims
+ Vehicles involved in claims
 
     SELECT vehicle_id, COUNT(*) AS total_claims
     FROM Claims
     GROUP BY vehicle_id;
     
+ Top High-Risk Customers
+ 
+       SELECT TOP 10 
+       cust.CustomerName,
+       COUNT(*) AS Total_Claims
+    FROM Claims c
+    JOIN Customers cust ON c.CustomerID = cust.CustomerID
+    GROUP BY cust.CustomerName
+    ORDER BY Total_Claims DESC;
+    
+ Claim Trend Over Time (Window Function)
+ 
+        SELECT 
+           YEAR(ClaimDate) AS Year,
+           COUNT(*) AS Total_Claims,
+           LAG(COUNT(*)) OVER (ORDER BY YEAR(ClaimDate)) AS Previous_Year
+       FROM Claims
+       GROUP BY YEAR(ClaimDate);
+       
+  Ranking High-Risk Locations
+  
+       SELECT 
+       l.City,
+       COUNT(*) AS Total_Claims,
+       RANK() OVER (ORDER BY COUNT(*) DESC) AS Risk_Rank
+    FROM Claims c
+    JOIN Locations l ON c.LocationID = l.LocationID
+    GROUP BY l.City;
+       
+    
+ 
 ## Dashboard (Power BI / Reporting)
 
 The cleaned and structured data can be connected to a visualization tool such as Power BI to build dashboards including:
@@ -245,6 +276,9 @@ The cleaned and structured data can be connected to a visualization tool such as
      Microsoft SQL Server
      T-SQL
      SSMS (SQL Server Management Studio)
+     ETL (BULK INSERT)
+     Advanced SQL (Joins, CTEs, Window Functions)
+     Performance Tuning (Indexes, Query Optimization)
      Power BI (for visualization)
      Mockaroo / CSV datasets
 
